@@ -2,8 +2,10 @@ machine:
   services:
     - docker
 
-test:
-  pre:
+dependencies:
+  override:
     - docker-compose run web npm install
+
+test:
   override:
     - docker-compose run web npm run test:server
