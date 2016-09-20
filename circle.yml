@@ -1,0 +1,9 @@
+machine:
+  services:
+    - docker
+
+test:
+  pre:
+    - docker-compose run web npm install
+  override:
+    - docker-compose run web npm run test:server
